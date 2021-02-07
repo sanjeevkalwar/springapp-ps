@@ -98,14 +98,14 @@ public class FootballStandingService {
 			.filter(standing->standing.getTeam_name().equalsIgnoreCase(teamName))
 			.map(standing -> {
 				Country country = new Country();
-				country.setCountry_id(countryMap.get(standing.getCountry_name()));
-				country.setCountry_name(standing.getCountry_name());
+				country.setCountryId(countryMap.get(standing.getCountry_name()));
+				country.setCountryName(standing.getCountry_name());
 				Team team = new Team();
 				team.setTeam_key(standing.getTeam_id());
 				team.setTeam_name(standing.getTeam_name());
 				League league = new League();
-				league.setLeague_id(standing.getLeague_id());
-				league.setLeague_name(standing.getLeague_name());
+				league.setLeagueId(standing.getLeague_id());
+				league.setLeagueName(standing.getLeague_name());
 				return new StandingInfo(country,team,Integer.parseInt(standing.getOverall_league_position()),league);
 			}).collect(Collectors.toList());
 		if(standingInfo==null || standingInfo.size()==0)
@@ -118,7 +118,7 @@ public class FootballStandingService {
 	private Map<String, String> getLeagues(String countryName, Map<String, String> countryMap) {
 		Map<String, String> leagueMap = leagueService
 				.getLeaguesForACountryFromApi(countryMap.get(countryName))
-				.stream().collect(Collectors.toMap(League::getLeague_name, League::getLeague_id));
+				.stream().collect(Collectors.toMap(League::getLeagueName, League::getLeagueId));
 		return leagueMap;
 	}
 }

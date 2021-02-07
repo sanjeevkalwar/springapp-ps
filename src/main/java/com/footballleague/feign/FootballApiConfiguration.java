@@ -20,6 +20,7 @@ import feign.Response;
 import feign.codec.Decoder;
 import feign.codec.Encoder;
 
+//TODO : Use Feign in the code
 @Configuration
 @Import(FeignClientsConfiguration.class)
 public class FootballApiConfiguration {

@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 
 import com.footballleague.feign.FootballApiClient;
 import com.footballleague.model.Countries;
+import com.footballleague.model.Country;
+import com.footballleague.model.League;
 
 @Component
 public class FootballLeagueService {
@@ -30,7 +32,7 @@ public class FootballLeagueService {
 		return footballApiClient.getAllCompetitions(apiKey);
 	}
 
-	public List<Map<String, String>> getCompetitionsForCountry(String id) {
+	public List<League> getCompetitionsForCountry(String id) {
 		return footballApiClient.getCompetitionsForCountry(apiKey, id);
 	}
 
@@ -38,7 +40,7 @@ public class FootballLeagueService {
 		return footballApiClient.getAllTeamsInACompetition(apiKey, competitionId);
 	}
 
-	public Countries getAllCountries() {
+	public List<Country> getAllCountries() {
 		return footballApiClient.getAllCountries(apiKey);
 	}
 

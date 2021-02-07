@@ -44,10 +44,10 @@ public class FootballStandingServiceImplTest {
 	@Before
 	public void setUp() {
 		League league=new League();
-		league.setCountry_id("41");
-		league.setCountry_name("England");
-		league.setLeague_id("149");
-		league.setLeague_name("Championship");
+		league.setCountryId("41");
+		league.setCountryName("England");
+		league.setLeagueId("149");
+		league.setLeagueName("Championship");
 		leagueList.add(league);
 		when(dataPopulation.getCountries()).thenReturn(countryMap);
 		when(leagueService

@@ -22,7 +22,7 @@ public class FootballLeagueConfiguration implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		dataPopulation.setCountries(countryService.getCountryFromApi().stream()
-				.collect(Collectors.toMap(Country::getCountry_name, Country::getCountry_id)));
+				.collect(Collectors.toMap(Country::getCountryName, Country::getCountryId)));
 		
 	}
 
