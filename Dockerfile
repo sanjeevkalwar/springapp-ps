@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:11
 EXPOSE 8080
-ADD target/demo-0.0.1.jar demo.jar
-ENTRYPOINT ["java","-jar","/demo.jar"]
+ADD target/ps-football-league.jar ps-football-league.jar
+ENTRYPOINT ["java","-jar","/ps-football-league.jar"]
