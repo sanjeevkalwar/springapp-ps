@@ -1,4 +1,4 @@
 FROM openjdk:11
 EXPOSE 8080
-ADD target/ps-football-league.jar ps-football-league.jar
-ENTRYPOINT ["java","-jar","/ps-football-league.jar"]
+ADD target/sapient-football-league-backend-0.0.1.jar sapient-football-league-backend.jar
+ENTRYPOINT ["java","-jar","/sapient-football-league-backend.jar"]
